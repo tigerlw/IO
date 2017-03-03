@@ -18,7 +18,7 @@ public class InputStreamTest
 		InputStream inputStream = null;
 		OutputStream outputStream = null;
 		ByteArrayOutputStream sweepStream = new ByteArrayOutputStream();
-		String path = "D:\\learning\\JAVA_DEMO\\io.txt";
+		String path = "D:\\learning\\leaning-repository\\IO\\io.txt";
 		try {
 			
 			inputStream = new BufferedInputStream(new FileInputStream(new File(path)));
@@ -30,21 +30,21 @@ public class InputStreamTest
 			}
 			
 			//byte[] byteAarry = new byte[inputStream.available()];
-			/*byte[] byteAarry = new byte[1];
+			byte[] byteAarry = new byte[1];
 			
 			while(inputStream.read(byteAarry)!=-1)
 			{
-				//System.out.println(new String(byteAarry,"utf8"));
-				sweepStream.write(byteAarry);
-			}*/
+				System.out.println(new String(byteAarry,"utf8"));
+				//sweepStream.write(byteAarry);
+			}
 			
-			int readInt=0;
+		/*	int readInt=0;
 			while((readInt=inputStream.read())!=-1)
 			{
 				sweepStream.write(readInt);
 			}
 			
-			System.out.println(new String(sweepStream.toByteArray(),"utf8"));
+			System.out.println(new String(sweepStream.toByteArray(),"utf8"));*/
 			
 			/*String outStr="今天";
 			
