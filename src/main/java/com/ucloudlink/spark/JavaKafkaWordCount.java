@@ -70,9 +70,11 @@ public final class JavaKafkaWordCount {
     // Create the context with 2 seconds batch size
     JavaStreamingContext jssc = new JavaStreamingContext(sparkConf, new Duration(5000));
     
+    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAJC6OJPEHZHIMYTWA");
+    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
+    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "s3.cn-north-1.amazonaws.com.cn");
     
-    
-    //jssc.checkpoint(".");
+    jssc.checkpoint("s3a://sparkcheckpoint/");
 
     int numThreads = Integer.parseInt("1");
     Map<String, Integer> topicMap = new HashMap<String, Integer>();
