@@ -4,6 +4,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.observers.SafeSubscriber;
+import rx.schedulers.Schedulers;
 
 public class RxJavaMain 
 {
@@ -24,15 +25,22 @@ public class RxJavaMain
 					}
 				}
 				
-				observer.onNext("==================================================="+param);
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				observer.onNext(Thread.currentThread().getName()+"==================================================="+param);
 				observer.onCompleted();
 			}
-		});
+		}).subscribeOn(Schedulers.newThread());
 		
 		observableString.subscribe(new ObserverT("liuwei"));
 		observableString.subscribe(new ObserverT("liuwei123"));
 		
-		
+		System.out.println("exit");
 		
 
 	}
@@ -48,17 +56,17 @@ public class RxJavaMain
 		}
 		
 		
-		@Override
+		//@Override
 		public void onCompleted() {
 			System.out.println("Observable completed");
 		}
 
-		@Override
+		//@Override
 		public void onError(Throwable e) {
 			System.out.println("Oh no! Something wrong happened!");
 		}
 
-		@Override
+		//@Override
 		public void onNext(String message) {
 
 			System.out.println(message);

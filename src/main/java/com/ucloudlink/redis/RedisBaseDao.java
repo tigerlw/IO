@@ -35,7 +35,7 @@ public class RedisBaseDao implements CacheDataDao
 	
 	
 	
-	@Override
+	//@Override
 	public <T> T getDataByKey(String primKey, String dataKey,Class<T> entityClass)
 	{
 		Jedis jedis = null;
@@ -60,7 +60,7 @@ public class RedisBaseDao implements CacheDataDao
 
 	}
 	
-	@Override
+	//@Override
 	public <T> List<T> getListDataByKey(String primKey, String dataKey,Class<T> entityClass)
 	{
 		Jedis jedis = null;
@@ -85,12 +85,12 @@ public class RedisBaseDao implements CacheDataDao
 				for (Object obj : dataList)
 				{
 					temp = obj.toString();
-					temp = temp.replace("=", "\":\"");
+				/*	temp = temp.replace("=", "\":\"");
 					temp = temp.replace("{", "{\"");
 					temp = temp.replace("}", "\"}");
 					temp = temp.replace(",", "\",\"").replace(" ", "").replace("\"{", "{")
 							.replace("}\"", "}").replace("\"[", "[").replace("]\"", "]")
-							.replace("\"null\"", "null");
+							.replace("\"null\"", "null");*/
 					result.add(SerializeUtil.jsonUnSerialize(temp.trim(), entityClass));
 				}
 
@@ -111,7 +111,7 @@ public class RedisBaseDao implements CacheDataDao
 
 	}
 	
-	@Override
+	//@Override
 	public <T> List<T> batchGetData(String primKey,Class<T> entityClass)
 	{
 		Jedis jedis = null;
@@ -133,7 +133,7 @@ public class RedisBaseDao implements CacheDataDao
 		return null;
 	}
 
-	@Override
+	//@Override
 	public <T> void setDataByKey(String primKey, String dataKey, T cacheData)
 	{
 		Jedis jedis = null;
@@ -149,7 +149,7 @@ public class RedisBaseDao implements CacheDataDao
 
 	}
 	
-	@Override
+	//@Override
 	
 	public <K,T> void batchSetData(String primKey, Map<K, T> cacheData){
 		Jedis jedis = null;
@@ -171,7 +171,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 	
-	@Override
+	//@Override
 	public void deleteDataByKey(String primKey,  String ...dataKey){
 		Jedis jedis = null;
 		try {
@@ -237,7 +237,7 @@ public class RedisBaseDao implements CacheDataDao
 		return null;
 	}*/
 
-	@Override
+	//@Override
 	public String getStringValueByKey(String primKey, String dataKey) {
 		Jedis jedis = null;
 		try {
@@ -251,7 +251,7 @@ public class RedisBaseDao implements CacheDataDao
 		return null;
 	}
 
-	@Override
+	//@Override
 	public Set<String> getMapKeysByPrimKey(String primKey) {
 		Jedis jedis = null;
 		try {
@@ -265,7 +265,7 @@ public class RedisBaseDao implements CacheDataDao
 		return null;
 	}
 
-	@Override
+	//@Override
 	public void deleteKey(String primKey) {
 		Jedis jedis = null;
 		try {
@@ -278,7 +278,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 
-	@Override
+	//@Override
 	public void zAddValueByKey(String primKey, String value, double score) {
 		Jedis jedis = null;
 		try {
@@ -292,7 +292,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 
-	@Override
+	//@Override
 	public void zRemoveValueByKey(String primKey, String key) {
 		Jedis jedis = null;
 		try {
@@ -305,7 +305,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 	
-	@Override
+	//@Override
 	public void zRemoveValueByKeys(String primKey, String[] keys) {
 		Jedis jedis = null;
 		try {
@@ -318,7 +318,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 
-	@Override
+	//@Override
 	public long zCard(String primKey) {
 		Jedis jedis = null;
 		try {
@@ -332,7 +332,7 @@ public class RedisBaseDao implements CacheDataDao
 		return 0;
 	}
 
-	@Override
+	//@Override
 	public Set<String> zRevRangeByScore(String key, double max, double min) {
 		Jedis jedis = null;
 		try {
@@ -346,7 +346,7 @@ public class RedisBaseDao implements CacheDataDao
 		return null;
 	}
 
-	@Override
+	//@Override
 	public void zAddValueByMap(String primKey, Map<String, Double> valueMap) {
 		Jedis jedis = null ;
 		try {
@@ -359,7 +359,7 @@ public class RedisBaseDao implements CacheDataDao
 		}
 	}
 
-	@Override
+	//@Override
 	public <T> T getDataByOneKey(String primKey,Class<T> entityClass) 
 	{
 		// TODO Auto-generated method stub
@@ -374,7 +374,7 @@ public class RedisBaseDao implements CacheDataDao
 		return result;
 	}
 
-	@Override
+	//@Override
 	public <T> void setDataByOneKey(String primKey, T cacheData) 
 	{
 		// TODO Auto-generated method stub
@@ -387,9 +387,13 @@ public class RedisBaseDao implements CacheDataDao
 		
 		jedis.watch(primKey);
 		
+		
+		
 		Transaction tran = jedis.multi();
 		
 		tran.set(primKey, data);
+		tran.expire(primKey, 300);
+		
 		
 		List<Object> result = tran.exec();
 		 

@@ -25,7 +25,7 @@ public class ServiceBean implements InitializingBean,DisposableBean
 		return result;
 	}
 
-	@Override
+	//@Override
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
 		executorService.shutdownNow();
@@ -34,7 +34,7 @@ public class ServiceBean implements InitializingBean,DisposableBean
 		System.out.println("ServiceBean destroy");
 	}
 
-	@Override
+	//@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		executorService = new ThreadPoolExecutor(0, 10,
@@ -43,7 +43,7 @@ public class ServiceBean implements InitializingBean,DisposableBean
 		
 		executorService.execute(new Runnable(){
 
-			@Override
+			//@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				int count = 0;

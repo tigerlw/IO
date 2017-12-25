@@ -16,13 +16,13 @@ public class DaoBean implements InitializingBean,DisposableBean
 		return baseBean.getBase();
 	}
 
-	@Override
+	//@Override
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("DaoBean destroy");
 	}
 
-	@Override
+	//@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		

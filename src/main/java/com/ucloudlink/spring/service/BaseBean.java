@@ -13,13 +13,13 @@ public class BaseBean implements InitializingBean,DisposableBean
 		return "123";
 	}
 
-	@Override
+	//@Override
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("BaseBean destroy");
 	}
 
-	@Override
+	//@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		

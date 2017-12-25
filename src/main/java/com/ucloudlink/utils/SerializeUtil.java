@@ -85,13 +85,15 @@ public class SerializeUtil
 
 	
 
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		//ByteArrayOutputStream out = new ByteArrayOutputStream();
 
 		try
 		{
-			JsonGenerator gener = om.getJsonFactory().createJsonGenerator(out);
+			/*JsonGenerator gener = om.getJsonFactory().createJsonGenerator(out);
 			gener.writeObject(object);
-			result = out.toString();
+			result = out.toString();*/
+			
+			result = JSON.toJSONString(object);
 
 			
 		} catch (Exception e)
@@ -99,18 +101,7 @@ public class SerializeUtil
 			// TODO Auto-generated catch block
 			//logger.error(e.toString());
 		}
-		finally
-		{
-			try
-			{
-				out.close();
-				
-			} catch (Exception e)
-			{
-				// TODO Auto-generated catch block
-				//logger.error(ExceptionUtils.getFullStackTrace(e));
-			}
-		}
+		
 
 		return result;
 	}
@@ -130,7 +121,7 @@ public class SerializeUtil
 		try {
 			
 			if(!StringUtils.isEmpty(jsonStr)){
-				result = om.readValue(jsonStr, entityClass);
+				result = JSON.parseObject(jsonStr, entityClass);
 			}
 			
 		} catch (Exception e) {

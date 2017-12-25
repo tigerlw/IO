@@ -15,7 +15,7 @@ public class ThreadLocalTest {
 
 				private ThreadLocal<byte[]> th = new ThreadLocal<byte[]>();
 
-				@Override
+				//@Override
 				public void run() {
 					// TODO Auto-generated method stub
 
