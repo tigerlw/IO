@@ -70,11 +70,11 @@ public final class JavaKafkaWordCount {
     // Create the context with 2 seconds batch size
     JavaStreamingContext jssc = new JavaStreamingContext(sparkConf, new Duration(5000));
     
-    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAJC6OJPEHZHIMYTWA");
-    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
-    jssc.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "s3.cn-north-1.amazonaws.com.cn");
+    //jssc.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAJC6OJPEHZHIMYTWA");
+    //jssc.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
+    //jssc.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "s3.cn-north-1.amazonaws.com.cn");
     
-    jssc.checkpoint("s3a://sparkcheckpoint/");
+    jssc.checkpoint("hdfs://119.23.109.156:9000/usr");
 
     int numThreads = Integer.parseInt("1");
     Map<String, Integer> topicMap = new HashMap<String, Integer>();
@@ -86,7 +86,7 @@ public final class JavaKafkaWordCount {
     topicMap.put("testtopic5", numThreads);
 
     JavaPairReceiverInputDStream<String, String> messages =
-            KafkaUtils.createStream(jssc, "127.0.0.1:2181", "1556", topicMap);
+            KafkaUtils.createStream(jssc, "127.0.0.1:2181", "1557", topicMap);
 
     JavaDStream<String> lines = messages.map(new Function<Tuple2<String, String>, String>() {
         @Override
