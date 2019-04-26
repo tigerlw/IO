@@ -392,7 +392,7 @@ public class RedisBaseDao implements CacheDataDao
 		Transaction tran = jedis.multi();
 		
 		tran.set(primKey, data);
-		tran.expire(primKey, 300);
+		//tran.expire(primKey, 300);
 		
 		
 		List<Object> result = tran.exec();

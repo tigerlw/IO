@@ -22,7 +22,7 @@ public class SparkAnalysisLogs
     {
     	SparkConf sparkConf = new SparkConf().setAppName("JavaAnalysis").setMaster("local");
 		JavaSparkContext ctx = new JavaSparkContext(sparkConf);
-		JavaRDD<String> lines = ctx.textFile("D:/logs/0117/*.log", 1);
+		JavaRDD<String> lines = ctx.textFile("D:/logs/new/app-10-11-2018-28.log", 1);
 		
 		JavaRDD<String> msg = lines.filter(s->s.contains("flowLog queue execute end"));
 		

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="field">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" minOccurs="0" />
+        <xs:element name="enabled" type="xs:string" minOccurs="0" />
+        <xs:element name="name" type="xs:string" minOccurs="0" />
+        <xs:element name="subject" type="xs:string" minOccurs="0" />
+        <xs:element name="column_name" type="xs:string" minOccurs="0" />
+        <xs:element name="stream_name" type="xs:string" minOccurs="0" />
+        <xs:element name="type" type="xs:string" minOccurs="0" />
+        <xs:element name="format" type="xs:string" minOccurs="0" />
+        <xs:element name="currency" type="xs:string" minOccurs="0" />
+        <xs:element name="decimal" type="xs:string" minOccurs="0" />
+        <xs:element name="group" type="xs:string" minOccurs="0" />
+        <xs:element name="nullif" type="xs:string" minOccurs="0" />
+        <xs:element name="trim_type" type="xs:string" minOccurs="0" />
+        <xs:element name="length" type="xs:string" minOccurs="0" />
+        <xs:element name="precision" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" minOccurs="0" />
+        <xs:element ref="attribute" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="notepads" type="xs:string" minOccurs="0" />
+        <xs:element name="step_error_handling" type="xs:string" minOccurs="0" />
+        <xs:element name="slave-step-copy-partition-distribution" type="xs:string" minOccurs="0" />
+        <xs:element name="slave_transformation" type="xs:string" minOccurs="0" />
+        <xs:element name="attributes" type="xs:string" minOccurs="0" />
+        <xs:element name="info" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="extended_description" type="xs:string" minOccurs="0" />
+              <xs:element name="trans_version" type="xs:string" minOccurs="0" />
+              <xs:element name="trans_type" type="xs:string" minOccurs="0" />
+              <xs:element name="directory" type="xs:string" minOccurs="0" />
+              <xs:element name="parameters" type="xs:string" minOccurs="0" />
+              <xs:element name="size_rowset" type="xs:string" minOccurs="0" />
+              <xs:element name="sleep_time_empty" type="xs:string" minOccurs="0" />
+              <xs:element name="sleep_time_full" type="xs:string" minOccurs="0" />
+              <xs:element name="unique_connections" type="xs:string" minOccurs="0" />
+              <xs:element name="feedback_shown" type="xs:string" minOccurs="0" />
+              <xs:element name="feedback_size" type="xs:string" minOccurs="0" />
+              <xs:element name="using_thread_priorities" type="xs:string" minOccurs="0" />
+              <xs:element name="shared_objects_file" type="xs:string" minOccurs="0" />
+              <xs:element name="capture_step_performance" type="xs:string" minOccurs="0" />
+              <xs:element name="step_performance_capturing_delay" type="xs:string" minOccurs="0" />
+              <xs:element name="step_performance_capturing_size_limit" type="xs:string" minOccurs="0" />
+              <xs:element name="dependencies" type="xs:string" minOccurs="0" />
+              <xs:element name="partitionschemas" type="xs:string" minOccurs="0" />
+              <xs:element name="clusterschemas" type="xs:string" minOccurs="0" />
+              <xs:element name="created_user" type="xs:string" minOccurs="0" />
+              <xs:element name="created_date" type="xs:string" minOccurs="0" />
+              <xs:element name="modified_user" type="xs:string" minOccurs="0" />
+              <xs:element name="modified_date" type="xs:string" minOccurs="0" />
+              <xs:element name="key_for_session_key" type="xs:string" minOccurs="0" />
+              <xs:element name="is_key_private" type="xs:string" minOccurs="0" />
+              <xs:element name="log" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="trans-log-table" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="connection" type="xs:string" minOccurs="0" />
+                          <xs:element name="schema" type="xs:string" minOccurs="0" />
+                          <xs:element name="table" type="xs:string" minOccurs="0" />
+                          <xs:element name="size_limit_lines" type="xs:string" minOccurs="0" />
+                          <xs:element name="interval" type="xs:string" minOccurs="0" />
+                          <xs:element name="timeout_days" type="xs:string" minOccurs="0" />
+                          <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="perf-log-table" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="connection" type="xs:string" minOccurs="0" />
+                          <xs:element name="schema" type="xs:string" minOccurs="0" />
+                          <xs:element name="table" type="xs:string" minOccurs="0" />
+                          <xs:element name="interval" type="xs:string" minOccurs="0" />
+                          <xs:element name="timeout_days" type="xs:string" minOccurs="0" />
+                          <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="channel-log-table" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="connection" type="xs:string" minOccurs="0" />
+                          <xs:element name="schema" type="xs:string" minOccurs="0" />
+                          <xs:element name="table" type="xs:string" minOccurs="0" />
+                          <xs:element name="timeout_days" type="xs:string" minOccurs="0" />
+                          <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="step-log-table" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="connection" type="xs:string" minOccurs="0" />
+                          <xs:element name="schema" type="xs:string" minOccurs="0" />
+                          <xs:element name="table" type="xs:string" minOccurs="0" />
+                          <xs:element name="timeout_days" type="xs:string" minOccurs="0" />
+                          <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="metrics-log-table" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="connection" type="xs:string" minOccurs="0" />
+                          <xs:element name="schema" type="xs:string" minOccurs="0" />
+                          <xs:element name="table" type="xs:string" minOccurs="0" />
+                          <xs:element name="timeout_days" type="xs:string" minOccurs="0" />
+                          <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="maxdate" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="connection" type="xs:string" minOccurs="0" />
+                    <xs:element name="table" type="xs:string" minOccurs="0" />
+                    <xs:element name="field" type="xs:string" minOccurs="0" />
+                    <xs:element name="offset" type="xs:string" minOccurs="0" />
+                    <xs:element name="maxdiff" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="slaveservers" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="slaveserver" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name" type="xs:string" minOccurs="0" />
+                          <xs:element name="hostname" type="xs:string" minOccurs="0" />
+                          <xs:element name="port" type="xs:string" minOccurs="0" />
+                          <xs:element name="webAppName" type="xs:string" minOccurs="0" />
+                          <xs:element name="username" type="xs:string" minOccurs="0" />
+                          <xs:element name="password" type="xs:string" minOccurs="0" />
+                          <xs:element name="proxy_hostname" type="xs:string" minOccurs="0" />
+                          <xs:element name="proxy_port" type="xs:string" minOccurs="0" />
+                          <xs:element name="non_proxy_hosts" type="xs:string" minOccurs="0" />
+                          <xs:element name="master" type="xs:string" minOccurs="0" />
+                          <xs:element name="sslMode" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="connection" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0" />
+              <xs:element name="server" type="xs:string" minOccurs="0" />
+              <xs:element name="type" type="xs:string" minOccurs="0" />
+              <xs:element name="access" type="xs:string" minOccurs="0" />
+              <xs:element name="database" type="xs:string" minOccurs="0" />
+              <xs:element name="port" type="xs:string" minOccurs="0" />
+              <xs:element name="username" type="xs:string" minOccurs="0" />
+              <xs:element name="password" type="xs:string" minOccurs="0" />
+              <xs:element name="servername" type="xs:string" minOccurs="0" />
+              <xs:element name="data_tablespace" type="xs:string" minOccurs="0" />
+              <xs:element name="index_tablespace" type="xs:string" minOccurs="0" />
+              <xs:element name="attributes" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="attribute" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="order" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hop" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="from" type="xs:string" minOccurs="0" />
+                    <xs:element name="to" type="xs:string" minOccurs="0" />
+                    <xs:element name="enabled" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="step" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0" />
+              <xs:element name="type" type="xs:string" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="distribute" type="xs:string" minOccurs="0" />
+              <xs:element name="custom_distribution" type="xs:string" minOccurs="0" />
+              <xs:element name="copies" type="xs:string" minOccurs="0" />
+              <xs:element name="hostname" type="xs:string" minOccurs="0" />
+              <xs:element name="port" type="xs:string" minOccurs="0" />
+              <xs:element name="use_all_replica_members" type="xs:string" minOccurs="0" />
+              <xs:element name="db_name" type="xs:string" minOccurs="0" />
+              <xs:element name="fields_name" type="xs:string" minOccurs="0" />
+              <xs:element name="collection" type="xs:string" minOccurs="0" />
+              <xs:element name="json_field_name" type="xs:string" minOccurs="0" />
+              <xs:element name="json_query" type="xs:string" minOccurs="0" />
+              <xs:element name="auth_database" type="xs:string" minOccurs="0" />
+              <xs:element name="auth_user" type="xs:string" minOccurs="0" />
+              <xs:element name="auth_password" type="xs:string" minOccurs="0" />
+              <xs:element name="auth_mech" type="xs:string" minOccurs="0" />
+              <xs:element name="auth_kerberos" type="xs:string" minOccurs="0" />
+              <xs:element name="connect_timeout" type="xs:string" minOccurs="0" />
+              <xs:element name="socket_timeout" type="xs:string" minOccurs="0" />
+              <xs:element name="use_ssl_socket_factory" type="xs:string" minOccurs="0" />
+              <xs:element name="read_preference" type="xs:string" minOccurs="0" />
+              <xs:element name="output_json" type="xs:string" minOccurs="0" />
+              <xs:element name="query_is_pipeline" type="xs:string" minOccurs="0" />
+              <xs:element name="execute_for_each_row" type="xs:string" minOccurs="0" />
+              <xs:element name="connection" type="xs:string" minOccurs="0" />
+              <xs:element name="schema" type="xs:string" minOccurs="0" />
+              <xs:element name="table" type="xs:string" minOccurs="0" />
+              <xs:element name="commit" type="xs:string" minOccurs="0" />
+              <xs:element name="truncate" type="xs:string" minOccurs="0" />
+              <xs:element name="ignore_errors" type="xs:string" minOccurs="0" />
+              <xs:element name="use_batch" type="xs:string" minOccurs="0" />
+              <xs:element name="specify_fields" type="xs:string" minOccurs="0" />
+              <xs:element name="partitioning_enabled" type="xs:string" minOccurs="0" />
+              <xs:element name="partitioning_field" type="xs:string" minOccurs="0" />
+              <xs:element name="partitioning_daily" type="xs:string" minOccurs="0" />
+              <xs:element name="partitioning_monthly" type="xs:string" minOccurs="0" />
+              <xs:element name="tablename_in_field" type="xs:string" minOccurs="0" />
+              <xs:element name="tablename_field" type="xs:string" minOccurs="0" />
+              <xs:element name="tablename_in_table" type="xs:string" minOccurs="0" />
+              <xs:element name="return_keys" type="xs:string" minOccurs="0" />
+              <xs:element name="return_field" type="xs:string" minOccurs="0" />
+              <xs:element name="sql" type="xs:string" minOccurs="0" />
+              <xs:element name="limit" type="xs:string" minOccurs="0" />
+              <xs:element name="lookup" type="xs:string" minOccurs="0" />
+              <xs:element name="execute_each_row" type="xs:string" minOccurs="0" />
+              <xs:element name="variables_active" type="xs:string" minOccurs="0" />
+              <xs:element name="lazy_conversion_active" type="xs:string" minOccurs="0" />
+              <xs:element name="separator" type="xs:string" minOccurs="0" />
+              <xs:element name="enclosure" type="xs:string" minOccurs="0" />
+              <xs:element name="enclosure_forced" type="xs:string" minOccurs="0" />
+              <xs:element name="enclosure_fix_disabled" type="xs:string" minOccurs="0" />
+              <xs:element name="header" type="xs:string" minOccurs="0" />
+              <xs:element name="footer" type="xs:string" minOccurs="0" />
+              <xs:element name="format" type="xs:string" minOccurs="0" />
+              <xs:element name="compression" type="xs:string" minOccurs="0" />
+              <xs:element name="encoding" type="xs:string" minOccurs="0" />
+              <xs:element name="endedLine" type="xs:string" minOccurs="0" />
+              <xs:element name="fileNameInField" type="xs:string" minOccurs="0" />
+              <xs:element name="fileNameField" type="xs:string" minOccurs="0" />
+              <xs:element name="create_parent_folder" type="xs:string" minOccurs="0" />
+              <xs:element name="attributes" type="xs:string" minOccurs="0" />
+              <xs:element name="cluster_schema" type="xs:string" minOccurs="0" />
+              <xs:element name="partitioning" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="method" type="xs:string" minOccurs="0" />
+                    <xs:element name="schema_name" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mongo_fields" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="mongo_field" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="field_name" type="xs:string" minOccurs="0" />
+                          <xs:element name="field_path" type="xs:string" minOccurs="0" />
+                          <xs:element name="field_type" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="file" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" minOccurs="0" />
+                    <xs:element name="servlet_output" type="xs:string" minOccurs="0" />
+                    <xs:element name="do_not_open_new_file_init" type="xs:string" minOccurs="0" />
+                    <xs:element name="extention" type="xs:string" minOccurs="0" />
+                    <xs:element name="append" type="xs:string" minOccurs="0" />
+                    <xs:element name="split" type="xs:string" minOccurs="0" />
+                    <xs:element name="haspartno" type="xs:string" minOccurs="0" />
+                    <xs:element name="add_date" type="xs:string" minOccurs="0" />
+                    <xs:element name="add_time" type="xs:string" minOccurs="0" />
+                    <xs:element name="SpecifyFormat" type="xs:string" minOccurs="0" />
+                    <xs:element name="date_time_format" type="xs:string" minOccurs="0" />
+                    <xs:element name="add_to_result_filenames" type="xs:string" minOccurs="0" />
+                    <xs:element name="pad" type="xs:string" minOccurs="0" />
+                    <xs:element name="fast_dump" type="xs:string" minOccurs="0" />
+                    <xs:element name="splitevery" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fields" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="remotesteps" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="input" type="xs:string" minOccurs="0" />
+                    <xs:element name="output" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="GUI" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="xloc" type="xs:string" minOccurs="0" />
+                    <xs:element name="yloc" type="xs:string" minOccurs="0" />
+                    <xs:element name="draw" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="field" />
+        <xs:element ref="attribute" />
+        <xs:element ref="transformation" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

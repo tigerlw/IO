@@ -17,11 +17,11 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-  <property>
+  <!-- <property>
      <name>fs.defaultFS</name>
      <value>hdfs://appcluster</value>
   </property>
-  <!-- 指定zookeeper地址 -->
+  指定zookeeper地址
   <property>
      <name>ha.zookeeper.quorum</name>
      <value>ip-172-31-21-119:2181,ip-172-31-19-51:2181,ip-172-31-19-51:2182</value>
@@ -29,5 +29,5 @@
   <property>
      <name>ha.zookeeper.session-timeout.ms</name>
      <value>2000</value>
-  </property>  
+  </property>   -->
 </configuration>

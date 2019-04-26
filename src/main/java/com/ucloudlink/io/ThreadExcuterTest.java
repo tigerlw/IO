@@ -19,6 +19,8 @@ public class ThreadExcuterTest
 		ThreadExcuterTest threadEx = new ThreadExcuterTest();
 		lock.lock();
 		
+		
+		
 		for(int i=0;i<2;i++)
 		{
 			excutor.execute(threadEx.new RunnableTest("ThreadBlock",String.valueOf(i),lock));

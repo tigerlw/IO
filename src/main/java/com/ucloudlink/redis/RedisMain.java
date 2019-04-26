@@ -12,11 +12,11 @@ public class RedisMain
 	{
 		CacheDataDao cache = new RedisBaseDao();
 		
-	/*	cache.setDataByOneKey("mytest", 123);
+		cache.setDataByOneKey("mytest", 123);
 		
-		Integer result = cache.getDataByOneKey("mytest", Integer.class);*/
+		Integer result = cache.getDataByOneKey("mytest", Integer.class);
 		
-		//System.out.println(result);
+		System.out.println(result);
 	/*	
 		List<LimitLevel> limitLevelList = new ArrayList<LimitLevel>();
 		
@@ -43,7 +43,7 @@ public class RedisMain
 		System.out.println(limitLevelList);*/
 		
 		
-		List<LimitLevelRe> limitLevelList = new ArrayList<LimitLevelRe>();
+		/*List<LimitLevelRe> limitLevelList = new ArrayList<LimitLevelRe>();
 		
 		LimitLevelRe limitLevel1 = new LimitLevelRe();
 		limitLevel1.setUserName("liuwei1");
@@ -65,7 +65,7 @@ public class RedisMain
 		
 		List<LimitLevel> limitLevelListRe = cache.getListDataByKey("limit_level", "123", LimitLevel.class);
 		
-		System.out.println(limitLevelList);
+		System.out.println(limitLevelList);*/
 		
 		
 	}
