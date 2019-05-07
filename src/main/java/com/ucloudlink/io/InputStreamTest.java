@@ -21,6 +21,8 @@ public class InputStreamTest
 		String path = "D:\\learning\\leaning-repository\\IO\\io.txt";
 		try {
 			
+			long wasteTime = System.currentTimeMillis();
+			
 			inputStream = new BufferedInputStream(new FileInputStream(new File(path)));
 			outputStream = new BufferedOutputStream(new FileOutputStream(new File(path),true));
 			
@@ -30,13 +32,16 @@ public class InputStreamTest
 			}
 			
 			//byte[] byteAarry = new byte[inputStream.available()];
-			byte[] byteAarry = new byte[1];
+			byte[] byteAarry = new byte[512];
 			
 			while(inputStream.read(byteAarry)!=-1)
 			{
-				System.out.println(new String(byteAarry,"utf8"));
+				//System.out.println(new String(byteAarry,"utf8"));
 				//sweepStream.write(byteAarry);
+				String chart = new String(byteAarry,"utf8");
 			}
+			
+			System.out.println("wasteTime:"+(System.currentTimeMillis() - wasteTime));
 			
 		/*	int readInt=0;
 			while((readInt=inputStream.read())!=-1)

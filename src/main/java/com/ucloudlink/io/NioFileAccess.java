@@ -10,7 +10,7 @@ public class NioFileAccess
 {
 	public static void main(String args[])
 	{
-		String path = "D:\\learning\\leaning-repository\\IO\\io.txt";
+		String path = "D:\\learning\\leaning-repository\\IO\\io2.txt";
 		
 		RandomAccessFile file = null;
 		FileChannel channel = null;
@@ -26,7 +26,7 @@ public class NioFileAccess
 			for(int i=0;i<100000*1000;i++)
 			{
 				buffer.clear();
-				buffer.put("test=========".getBytes("utf8"));
+				buffer.put("test========= \n".getBytes("utf8"));
 				buffer.flip();
 
 				while (buffer.hasRemaining()) {

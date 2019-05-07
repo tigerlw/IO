@@ -15,7 +15,7 @@ public class MainS3
 {
 	public static void main(String args[])
 	{
-		AWSCredentials credentials = new BasicAWSCredentials("key", "keys");
+		AWSCredentials credentials = new BasicAWSCredentials("123", "123");
 		AmazonS3 s3client = new AmazonS3Client(credentials);
 		s3client.setRegion(Region.getRegion(Regions.US_EAST_1));
 		
