@@ -23,8 +23,8 @@ public class SparkAnalysisLogs
     	SparkConf sparkConf = new SparkConf().setAppName("JavaAnalysis").setMaster("yarn-cluster");
 		JavaSparkContext ctx = new JavaSparkContext(sparkConf);
 		
-		ctx.hadoopConfiguration().set("fs.s3a.access.key", "AKIA5IIEQNDD22ZLX2O6");
-		ctx.hadoopConfiguration().set("fs.s3a.secret.key", "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");
+		ctx.hadoopConfiguration().set("fs.s3a.access.key", "123");
+		ctx.hadoopConfiguration().set("fs.s3a.secret.key", "123");
 		
 		JavaRDD<String> lines = ctx.textFile("s3a://hadoop-yarn/app-01-09-2018-66.log", 1);
 		
