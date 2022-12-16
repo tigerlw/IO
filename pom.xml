@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<spring.version>4.0.1.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<ocs.version>0.0.2</ocs.version>
 		<ucl-boss-service-api.version>0.0.2</ucl-boss-service-api.version>
 		<ucl-boss-cache.version>0.0.1</ucl-boss-cache.version>
